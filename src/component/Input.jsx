@@ -1,32 +1,40 @@
-import styled from "styled-components";
+import "../assets/styles/Input.css";
 import { useMemoStore } from "./../store/MemoList";
 import { useState } from "react";
 
-
 const MemoInput = () => {
   const { addMemo } = useMemoStore();
-  const [value, setValue] = useState("");
+
+  const [title, setTitle] = useState("");
+  const [date, setDate] = useState("");
+  const [content, setContent] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    addMemo({ title, date, content });
+    setTitle("");
+    setDate("");
+    setContent("");
+  };
 
   return (
-    <AddMemoForm
-      onSubmit={(e) => {
-        e.preventDefault();
-        addMemo(value);
-        
-        setValue("");
-      }}
-    >
+    <AddMemoForm onSubmit={handleSubmit}>
       <div>
         <input
           type="text"
-          onChange={(e) =>
-            setValue((prev) => {
-              if (prev !== e.target.value) {
-                return e.target.value;
-              }
-            })
-          }
-          value={value}
+          placeholder="제목을 입력하세요"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+        />
+        <input
+          type="date"
+          value={date}
+          onChange={(e) => setDate(e.target.value)}
+        />
+        <textarea
+          placeholder="상세 내용을 입력하세요"
+          value={content}
+          onChange={(e) => setContent(e.target.value)}
         />
         <button type="submit">저장</button>
       </div>
@@ -35,26 +43,3 @@ const MemoInput = () => {
 };
 
 export default MemoInput;
-
-const AddMemoForm = styled.form`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  margin: 16px;
-  > div {
-    position: relative;
-    width: 400px;
-    height: 200px;
-  }
-  input {
-    width: 100%;
-    height: 100%;
-    text-align: center;
-  }
-  button {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-  }
-`;
