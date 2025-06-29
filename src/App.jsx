@@ -6,6 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css'
 import Add from './pages/Add_page.jsx';
 import Home from './pages/Home.jsx';
+import Detail from './pages/Detail_page.jsx';
 import Login from './pages/Login';
 import Header from './layout/Header';
 import Footer from './layout/Footer.jsx';
@@ -20,8 +21,9 @@ function App() {
         <Header/>
         <Routes>
           <Route path="/" element={<Home/>}/>
-          <Route path="/add" element={<About/>}/>
+          <Route path="/add" element={<Add/>}/>
           <Route path="/login" element={<Login/>} />
+          <Route path="/detail" element={<Detail/>} />
         </Routes>
         <Footer/>
       </main>

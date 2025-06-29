@@ -22,7 +22,7 @@ function Header() {
             navbarScroll
           >
             <Nav.Link as={Link} to="/">Home</Nav.Link>
-            <Nav.Link as={Link} to="/about">Add Page</Nav.Link>
+            <Nav.Link as={Link} to="/add">Add Page</Nav.Link>
             <Nav.Link as={Link} to="/login">Detail Page</Nav.Link>
             <Nav.Link as={Link} to="/login">Login</Nav.Link>
             
