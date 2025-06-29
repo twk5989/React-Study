@@ -1,6 +1,6 @@
 import React from "react";
 
-function About() { //함수형 컴포넌트 정의
+function Add() { //함수형 컴포넌트 정의
     return (
         <>
             About 페이지입니다.
@@ -17,4 +17,4 @@ function About() { //함수형 컴포넌트 정의
     );
 }
 
-export default About;
+export default Add;

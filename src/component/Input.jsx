@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import { useMemoStore } from "./../store/MemoList";
 import { useState } from "react";
+
+
 const MemoInput = () => {
   const { addMemo } = useMemoStore();
   const [value, setValue] = useState("");

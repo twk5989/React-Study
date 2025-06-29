@@ -22,18 +22,10 @@ function Header() {
             navbarScroll
           >
             <Nav.Link as={Link} to="/">Home</Nav.Link>
-            <Nav.Link as={Link} to="/about">About</Nav.Link>
+            <Nav.Link as={Link} to="/about">Add Page</Nav.Link>
+            <Nav.Link as={Link} to="/login">Detail Page</Nav.Link>
             <Nav.Link as={Link} to="/login">Login</Nav.Link>
-            <NavDropdown title="Link" id="navbarScrollingDropdown">
-              <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action4">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action5">
-                Something else here
-              </NavDropdown.Item>
-            </NavDropdown>
+            
           </Nav>
           {/* 검색창 부분 */}
           <Form className="d-flex">

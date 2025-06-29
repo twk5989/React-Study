@@ -4,7 +4,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css'
-import About from './pages/About.jsx';
+import Add from './pages/Add_page.jsx';
 import Home from './pages/Home.jsx';
 import Login from './pages/Login';
 import Header from './layout/Header';
@@ -20,7 +20,7 @@ function App() {
         <Header/>
         <Routes>
           <Route path="/" element={<Home/>}/>
-          <Route path="/about" element={<About/>}/>
+          <Route path="/add" element={<About/>}/>
           <Route path="/login" element={<Login/>} />
         </Routes>
         <Footer/>

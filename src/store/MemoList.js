@@ -4,11 +4,16 @@ export const useMemoStore = create((set) => ({  // 객체 형태의 함수를 �
   memoList: [],
 
   //상태를 조작할 액션 함수
-  addMemo: (val) =>
+  addMemo: ({ title, date, content }) =>
     set((prev) => ({
       memoList: [
         ...prev.memoList,
-        { content: val, id: new Date().getMilliseconds() + val },
+        { 
+          id: new Date().getTime(),
+          title,
+          date,
+          content,
+         },
       ],
     })),
   //아이디를 입력 받아서 기존에 존재하는 배열을 필터에 일치하지 않는것만 남겨둔다
