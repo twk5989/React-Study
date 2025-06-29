@@ -8,6 +8,7 @@ import About from './pages/About.jsx';
 import Home from './pages/Home.jsx';
 import Login from './pages/Login';
 import Header from './layout/Header';
+import Footer from './layout/Footer.jsx';
 
 //App에서는 경로를 지정. view + url 합친 개념
 function App() {
@@ -22,6 +23,7 @@ function App() {
           <Route path="/about" element={<About/>}/>
           <Route path="/login" element={<Login/>} />
         </Routes>
+        <Footer/>
       </main>
     </BrowserRouter>
   )
