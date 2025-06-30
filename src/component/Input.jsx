@@ -18,8 +18,8 @@ const MemoInput = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
+    <form className="memo-form" onSubmit={handleSubmit}>
+      <div className="form-wrapper">
         <input
           type="text"
           placeholder="제목을 입력하세요"
