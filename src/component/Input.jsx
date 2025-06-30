@@ -12,7 +12,7 @@ const MemoInput = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // 간단한 유효성 검사
+    //유효성 검사 넣음
     if (!title || !date || !content) return alert("모든 항목을 입력해주세요");
 
     addMemo({ title, date, content });
