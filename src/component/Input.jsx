@@ -1,30 +1,36 @@
 import { useMemoStore } from "../store/MemoList";
-import "../assets/styles/Input.css";
+import { AddMemoForm, Input, Textarea, SubmitButton } from "../assets/styles/Input.styles.js";
+import { useState } from "react";
 
 const MemoInput = () => {
-  const {
-    title,
-    date,
-    content,
-    setTitle,
-    setDate,
-    setContent,
-    addMemo,
-  } = useMemoStore();
+  const { addMemo } = useMemoStore();
+
+  const [title, setTitle] = useState("");
+  const [date, setDate] = useState("");
+  const [content, setContent] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    addMemo(); // ✅ store에서 상태 가져와서 처리
+
+    // 간단한 유효성 검사
+    if (!title || !date || !content) return alert("모든 항목을 입력해주세요");
+
+    addMemo({ title, date, content });
+
+    // 초기화
+    setTitle("");
+    setDate("");
+    setContent("");
   };
 
   return (
-    <form className="memo-form" onSubmit={handleSubmit}>
-      <div className="form-wrapper">
+    <AddMemoForm onSubmit={handleSubmit}>
+      <div>
         <input
           type="text"
-          placeholder="제목을 입력하세요"
+          placeholder="제목"
           value={title}
-          onChange={(e) => setTitle(e.target.value)} // ✅ store setter 사용
+          onChange={(e) => setTitle(e.target.value)}
         />
         <input
           type="date"
@@ -32,13 +38,13 @@ const MemoInput = () => {
           onChange={(e) => setDate(e.target.value)}
         />
         <textarea
-          placeholder="상세 내용을 입력하세요"
+          placeholder="상세 내용"
           value={content}
           onChange={(e) => setContent(e.target.value)}
         />
         <button type="submit">저장</button>
       </div>
-    </form>
+    </AddMemoForm>
   );
 };
 
