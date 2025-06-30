@@ -1,20 +1,20 @@
+import { useMemoStore } from "../store/MemoList";
 import "../assets/styles/Input.css";
-import { useMemoStore } from "./../store/MemoList";
-import { useState } from "react";
 
 const MemoInput = () => {
-  const { addMemo } = useMemoStore();
-
-  const [title, setTitle] = useState("");
-  const [date, setDate] = useState("");
-  const [content, setContent] = useState("");
+  const {
+    title,
+    date,
+    content,
+    setTitle,
+    setDate,
+    setContent,
+    addMemo,
+  } = useMemoStore();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    addMemo({ title, date, content });
-    setTitle("");
-    setDate("");
-    setContent("");
+    addMemo(); // ✅ store에서 상태 가져와서 처리
   };
 
   return (
@@ -24,7 +24,7 @@ const MemoInput = () => {
           type="text"
           placeholder="제목을 입력하세요"
           value={title}
-          onChange={(e) => setTitle(e.target.value)}
+          onChange={(e) => setTitle(e.target.value)} // ✅ store setter 사용
         />
         <input
           type="date"

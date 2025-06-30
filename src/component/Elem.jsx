@@ -1,33 +1,19 @@
-import React from "react";
 import { useMemoStore } from "../store/MemoList";
-import MemoElem from "../component/Elem";
 import styled from "styled-components";
 
-
-const Detail = () => {
-  const { memoList } = useMemoStore();
+const MemoElem = ({ id, children }) => {
+  const removeMemo = useMemoStore((state) => state.removeMemo);
 
   return (
     <div>
-      <h1>메모 상세 보기</h1>
-      {memoList.length === 0 ? (
-        <p>등록된 메모가 없습니다.</p>
-      ) : (
-        memoList.map((memo) => (
-          <MemoElem key={memo.id} id={memo.id}>
-            <div>
-              <h2>{memo.title}</h2>
-              <p>{memo.date}</p>
-              <p>{memo.content}</p>
-            </div>
-          </MemoElem>
-        ))
-      )}
+      {children}
+      <button onClick={() => removeMemo(id)}>삭제</button>
     </div>
   );
 };
 
-export default Detail;
+export default MemoElem;
+
 
 
 const RemoveButton = styled.button`
