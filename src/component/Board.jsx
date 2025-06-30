@@ -1,22 +1,28 @@
 import React from "react";
-import "../assets/styles/Board.css";
+import {
+  MemoWrapper,
+  MemoCard,
+  Title,
+  DateText,
+  Content,
+  EmptyMessage,
+} from "../assets/styles/Board.styles.js";
 
 const Board = ({ memoList }) => {
   return (
-    <div className="memo-wrapper">
+    <MemoWrapper>
       {memoList.length === 0 ? (
-        <p className="empty-message">등록된 메모가 없습니다.</p>
+        <EmptyMessage>추가된 메모가 없습니다.</EmptyMessage>
       ) : (
-        memoList.map((memo) => (
-          <div className="memo-card" key={memo.id}>
-            <h2>{memo.title}</h2>
-            <p className="date">{memo.date}</p>
-            <p>{memo.content}</p>
-          </div>
+        memoList.map(({ id, title, date, content }) => (
+          <MemoCard key={id}>
+            <Title>{title}</Title>
+            <DateText>{date}</DateText>
+            <Content>{content}</Content>
+          </MemoCard>
         ))
       )}
-      <p className="lol">📝 메모</p>
-    </div>
+    </MemoWrapper>
   );
 };
 
