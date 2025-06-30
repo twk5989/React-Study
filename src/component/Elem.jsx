@@ -1,30 +1,29 @@
 import { useMemoStore } from "../store/MemoList";
-import styled from "styled-components";
+import {
+  MemoCard,
+  Title,
+  DateText,
+  Content,
+  RemoveButton,
+} from "../assets/styles/Elem.styles.js";
 
-const MemoElem = ({ id, children }) => {
-  const removeMemo = useMemoStore((state) => state.removeMemo);
+const MemoElem = ({ id, title, date, content }) => {
+  const { removeMemo } = useMemoStore();
 
   return (
-    <div>
-      {children}
-      <button onClick={() => removeMemo(id)}>삭제</button>
-    </div>
+    <MemoCard>
+      <RemoveButton onClick={() => {
+  if (window.confirm("이 메모를 삭제하시겠습니까?")) {
+    removeMemo(id);
+  }
+}}>✕</RemoveButton>
+      <Title>{title}</Title>
+      <DateText>{date}</DateText>
+      <Content>{content}</Content>
+
+    </MemoCard>
   );
 };
 
+
 export default MemoElem;
-
-
-
-const RemoveButton = styled.button`
-  padding: 4px 8px;
-  background-color: tomato;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  cursor: pointer;
-  font-size: 12px;
-`;
