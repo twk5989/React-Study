@@ -18,7 +18,7 @@ const MemoInput = () => {
   };
 
   return (
-    <AddMemoForm onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit}>
       <div>
         <input
           type="text"
@@ -38,7 +38,7 @@ const MemoInput = () => {
         />
         <button type="submit">저장</button>
       </div>
-    </AddMemoForm>
+    </form>
   );
 };
 
