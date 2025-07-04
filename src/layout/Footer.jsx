@@ -1,7 +1,7 @@
 function Footer() {
     return (
         <div>
-            여기는 하단 영역입니다
+        하단임
         </div>
     );
 }
