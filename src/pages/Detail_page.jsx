@@ -10,7 +10,6 @@ const Detail = () => {
     <div>
       <h1>메모 상세 보기</h1>
       <Board memoList={memoList} />
-      <MemoElem/>
     </div>
   );
 };

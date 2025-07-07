@@ -7,6 +7,7 @@ import {
   Content,
   EmptyMessage,
 } from "../assets/styles/Board.styles.js";
+import MemoElem from "./Elem.jsx";
 
 const Board = ({ memoList }) => {
   return (
@@ -15,11 +16,13 @@ const Board = ({ memoList }) => {
         <EmptyMessage>추가된 메모가 없습니다.</EmptyMessage>
       ) : (
         memoList.map(({ id, title, date, content }) => (
-          <MemoCard key={id}>
-            <Title>{title}</Title>
-            <DateText>{date}</DateText>
-            <Content>{content}</Content>
-          </MemoCard>
+          <MemoElem 
+          key={id}
+          id={id}
+          title={title}
+          date={date}
+          content={content}
+          />
         ))
       )}
     </MemoWrapper>
