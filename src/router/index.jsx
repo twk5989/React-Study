@@ -20,3 +20,5 @@ const router = createBrowserRouter([
 ]);
 
 export default router;
+
+//이름이 index.jsx이지 호출되는 함수 이름은 router임
