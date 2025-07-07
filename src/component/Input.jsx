@@ -15,12 +15,20 @@ const MemoInput = () => {
     //유효성 검사 넣음
     if (!title || !date || !content) return alert("모든 항목을 입력해주세요");
 
+    //확인 팝업
+    const isConfirmed = window.confirm("메모를 등록하시겠습니까?");
+    if (!isConfirmed) {
+    return;
+  }
+    //등록
     addMemo({ title, date, content });
 
     // 초기화
     setTitle("");
     setDate("");
     setContent("");
+
+    alert("메모가 등록되었습니다!");
   };
 
   return (
