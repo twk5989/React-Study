@@ -1,6 +1,8 @@
 import { useMemoStore } from "../store/MemoList";
 import { AddMemoForm, Input, Textarea, SubmitButton } from "../assets/styles/Input.styles.js";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 
 const MemoInput = () => {
   const { addMemo } = useMemoStore();
@@ -8,6 +10,7 @@ const MemoInput = () => {
   const [title, setTitle] = useState("");
   const [date, setDate] = useState("");
   const [content, setContent] = useState("");
+  const navigate = useNavigate(); //페이지 이동 함수
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -29,6 +32,7 @@ const MemoInput = () => {
     setContent("");
 
     alert("메모가 등록되었습니다!");
+    navigate("/detail"); //완료 누르면 detail 페이지로 감
   };
 
   return (
