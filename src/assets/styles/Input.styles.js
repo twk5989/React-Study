@@ -1,5 +1,7 @@
-// MemoInput.styles.js
-import styled from "styled-components";
+/** @jsxImportSource @emotion/react */
+import styled from "@emotion/styled";
+
+//이거는 emotion의 styled api방식
 
 export const AddMemoForm = styled.form`
   max-width: 420px;
@@ -34,7 +36,8 @@ export const Input = styled.input`
 `;
 
 export const Textarea = styled.textarea`
-  padding: 12px 16px;
+  padding: 12px 16px;                  //상하 12, 좌우 16
+  margin: 16px 0px 12px 0px ;         //상,우,하,좌
   font-size: 1rem;
   border: 2px solid #ddd;
   border-radius: 8px;
@@ -49,7 +52,7 @@ export const Textarea = styled.textarea`
   }
 `;
 
-export const SubmitButton = styled.button`
+export const Button = styled.button`
   align-self: flex-end;
   padding: 10px 28px;
   background-color: #fa451e;
