@@ -22,7 +22,7 @@ const MemoInput = () => {
     const isConfirmed = window.confirm("메모를 등록하시겠습니까?");
     if (!isConfirmed) {
     return;
-  }
+     }
     //등록
     addMemo({ title, date, content });
 

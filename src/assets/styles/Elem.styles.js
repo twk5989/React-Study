@@ -1,4 +1,5 @@
 import styled from "styled-components";
+//스타일 컴포넌트 함수의 스타일을 아래처럼 지정하고 필요한 곳에서 그 함수를 임포트한다
 
 export const MemoCard = styled.div`
   position: relative;
