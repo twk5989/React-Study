@@ -49,6 +49,12 @@ export const DateText = styled.p`
   margin: 0;
 `;
 
+export const Author = styled.p`
+  font-size: 0.85rem;
+  color: #6b6b6b;
+  margin: 0;
+`;
+
 export const Content = styled.p`
   font-size: 1rem;
   line-height: 1.3;

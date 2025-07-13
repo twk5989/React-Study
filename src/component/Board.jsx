@@ -5,6 +5,7 @@ import {
   Title,
   DateText,
   Content,
+  Author,
   EmptyMessage,
 } from "../assets/styles/Board.styles.js";
 import MemoElem from "./Elem.jsx";
@@ -15,13 +16,14 @@ const Board = ({ memoList }) => {
       {memoList.length === 0 ? (
         <EmptyMessage>추가된 메모가 없습니다.</EmptyMessage>
       ) : (
-        memoList.map(({ id, title, date, content }) => (
+        memoList.map(({ id, title, date, content, author }) => (
           <MemoElem 
           key={id}
           id={id}
           title={title}
           date={date}
           content={content}
+          author={author}
           />
         ))
       )}

@@ -2,7 +2,7 @@ import { create } from "zustand";  // store를 생성하는 create 함수
 
 export const useMemoStore = create((set) => ({  // 객체 형태의 함수를 반환하는 store 생성
   memoList: [],
-  addMemo: ({ title, date, content }) =>
+  addMemo: ({ title, date, content, author }) =>
     set((prev) => ({
       memoList: [
         ...prev.memoList,
@@ -11,6 +11,7 @@ export const useMemoStore = create((set) => ({  // 객체 형태의 함수를 �
           title,
           date,
           content,
+          author,
         },
       ],
     })),
