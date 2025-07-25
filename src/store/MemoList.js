@@ -22,3 +22,5 @@ export const useMemoStore = create((set) => ({  // 객체 형태의 함수를 �
       memoList: prev.memoList.filter((e) => e.id !== id),
     })),
 }));
+
+// 나머지 추가 예정
