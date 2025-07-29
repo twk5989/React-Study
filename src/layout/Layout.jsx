@@ -1,5 +1,6 @@
 //여기에 헤더와 푸터를 정의하고 그리고 다시 router에 호출된다.
 //그리고 그 라우터는 App.jsx에 호출된다
+
 import Footer from "./Footer";
 import Header from "./Header";
 import React from "react";
